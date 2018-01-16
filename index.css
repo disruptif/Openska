@@ -1,0 +1,36 @@
+#header {
+	/*background: #29AB9E;*/
+}
+
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px;
+    overflow: hidden;
+}
+
+#nav li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+#users-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px;
+    overflow: hidden;
+}
+
+#content {
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+}
+
