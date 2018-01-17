@@ -20,11 +20,17 @@ class User {
  // Setter
   public function setName($str) {
    // nom en majuscule
-   $this->name = stroupper($str);
+
+   $this->name = strtoupper($str);
+  
   }
  
   public function presentation() {
    echo "bonjour je suis".$this->name;
+  }
+
+  public function __toString() {
+    echo "je suis un objet de type User mon prenom est $this->name et mon nom";
   }
 }
 

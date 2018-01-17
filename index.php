@@ -1,25 +1,22 @@
 <?php 
 
 include("header.php"); 
-include("db.php");
 include("User.php");
+include("db.php");
 
-// Affiche les résultats
-$resultats = $mysql->query("SELECT * FROM users");
+
+// Connexion à la BDD
+
+$resultats = $connexion->query("SELECT * FROM users");
 
 
 $user1 = new User("bonnier","vincent");
- 
-var_dump($user1);
-/*
- $user1 = setName('PafPaf Le Loup');
- 
+$user1->setName('PafPaf Le Loup');
 
- $user2 = new User('Le Comté fruité');
+
+ /*$user2 = new User('Le Comté fruité');
  $use2->presentation();
- 
-
-echo User::$compteur;
+ echo User::$compteur;
 */
 ?>
 
@@ -28,10 +25,12 @@ echo User::$compteur;
 		<div class="col-md-12">
 			<ul id="users-list">
 				<?php
-				while (NULL !== ($row = $resultats->fetch_array())) {
-					echo '<li><a href="userDetails.php?id=1">'.$row['name']."</a></li>";
+				while ($row = $resultats->fetch(PDO::FETCH_ASSOC)) {
+					echo '<li><a href="userDetails.php?id=1">'.$row['name']." - ".$row['year']."</a></li>";
 					echo "<br />"; 
 				}
+
+				$resultats->closeCursor(); 
 				?> 	
 			</ul>
 		</br>
